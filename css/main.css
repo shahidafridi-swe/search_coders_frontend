@@ -1,0 +1,52 @@
+.b1 {
+    background-color: #02343F;
+}
+.t1 {
+    color: #02343F;
+}
+
+.b2{
+    background-color: #F2AA4C;
+}
+.t2{
+    color: #F2AA4C !important;
+}
+.my-btn {
+    background-color: #02343F;
+    color: #F2AA4C ;
+}
+
+.my-btn:hover {
+    background-color: #F2AA4C;
+    color: #02343F;
+    border: 1px solid #02343F;
+}
+
+.project-card{
+    background-color: #F2AA4C;
+    border: 1px solid #02343F;
+}
+.project-card p h5 {
+    color: #02343F;
+}
+.project-card:hover{
+    background-color: #02343F;
+    color: #F2AA4C ;
+    border: 2px solid #F2AA4C;
+    padding: 10px;
+}
+
+.project-owner{
+    background-color: #02343F;
+    color: #F2AA4C ;
+}
+.project-owner a{
+    color: #F2AA4C ;
+}
+.project-owner:hover{
+    background-color: #F2AA4C ;
+    color: #02343F;
+}
+.project-owner:hover h5 a{
+    color: #02343F;
+}
