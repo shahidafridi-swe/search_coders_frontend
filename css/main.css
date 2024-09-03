@@ -50,3 +50,10 @@
 .project-owner:hover h5 a{
     color: #02343F;
 }
+
+.developer-card{
+    background-color:  #02343F;
+    border: 1px solid #F2AA4C;
+    color:  #F2AA4C;
+
+}

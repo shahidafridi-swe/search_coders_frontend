@@ -20,6 +20,7 @@ const performSearch = () => {
 const loadProjects = () => {
     performSearch(); 
 };
+
 function displayProjects(data) {
     const projectList = document.getElementById('project-list');
     projectList.innerHTML = '';  

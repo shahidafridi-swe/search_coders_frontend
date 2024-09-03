@@ -21,17 +21,12 @@ fetch("../navbar.html")
                 <a class="nav-link t2" onclick="handleLogout()"  href="#" >Logout</a>
             </li>
 
+            
             <li class="nav-item">
-                <a class="nav-link t2 "  href="./profile.html">Profile</a>
-                </li>
-    
-                <li class="nav-item">
-                    <a class="nav-link t2"  onclick="handleLogout()"  href="#" >Logout</a>
-                </li>
-                 <li class="nav-item">
                 <a class="nav-link t2" href="./login.html">Login</a>
             </li>
             
+
             <li class="nav-item">
                 <a class="nav-link t2" href="./register.html">Register</a>
             </li>

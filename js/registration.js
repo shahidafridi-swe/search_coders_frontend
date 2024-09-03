@@ -49,28 +49,28 @@ const handleRegister = async  (event) => {
         password: formData.get("password"),
     };
     console.log(registerData)
-    // fetch("http://127.0.0.1:8000/users/register/", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(registerData),
-    // })
-    // .then((res) => res.json())
-    // .then((data) => {
+    fetch("http://127.0.0.1:8000/users/register/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registerData),
+    })
+    .then((res) => res.json())
+    .then((data) => {
 
-    //     console.log(data);
-    //     document.getElementById("register-loading-message").innerText= ""
-    //     document.getElementById("register-success-message").innerText = "Check Your Email For Activate Your account"
+        console.log(data);
+        document.getElementById("register-loading-message").innerText= ""
+        document.getElementById("register-success-message").innerText = "Check Your Email For Activate Your account"
        
-    //     if (data.error) {
+        if (data.error) {
            
-    //     } else {
-    //         setTimeout(() => {
-    //             window.location.href = "login.html";
-    //         }, 2000);
-    //     }
-    // })
-    // .catch((err) => console.log("error::",err))
+        } else {
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 2000);
+        }
+    })
+    .catch((err) => console.log("error::",err))
 }
 
