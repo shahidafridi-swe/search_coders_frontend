@@ -28,7 +28,7 @@ const handleLogin = async (event) => {
 
             document.getElementById("login-success-message").innerText = "Login successful! Redirecting...";
             setTimeout(() => {
-                window.location.href = "dashboard.html"; 
+                window.location.href = "index.html"; 
             }, 2000);
         } else {
             document.getElementById("login-error-message").innerText = data.non_field_errors || "Login failed!";

@@ -1,6 +1,9 @@
 .b1 {
     background-color: #02343F;
 }
+.b3 {
+    background-color: #f2aa4c9f;
+}
 .t1 {
     color: #02343F;
 }
@@ -30,10 +33,18 @@
     color: #02343F;
 }
 .project-card:hover{
-    background-color: #02343F;
-    color: #F2AA4C ;
-    border: 2px solid #F2AA4C;
+    
+    border: 2px solid #02343F;
     padding: 10px;
+}
+
+.project-title{
+    color: #02343F;
+}
+.project-title:hover{
+    
+    color: white ;
+    
 }
 
 .project-owner{
@@ -43,17 +54,26 @@
 .project-owner a{
     color: #F2AA4C ;
 }
-.project-owner:hover{
-    background-color: #F2AA4C ;
-    color: #02343F;
-}
+
 .project-owner:hover h5 a{
     color: #02343F;
 }
 
 .developer-card{
     background-color:  #02343F;
-    border: 1px solid #F2AA4C;
+    border: 4px solid #02343F;
     color:  #F2AA4C;
+}
+.developer-card:hover{
+    border: 4px solid #F2AA4C;
+    color:  white;
 
+}
+
+.social-icon {
+    color:  #F2AA4C;
+}
+
+.social-icon:hover {
+    color:  white;
 }
