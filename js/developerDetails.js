@@ -1,7 +1,7 @@
 const getParams = () => {
     const param = new URLSearchParams(window.location.search).get("user_id");
     console.log(param)
-    fetch(`https://search-coders.onrender.com/${param}`)
+    fetch(`https://search-coders.onrender.com/users/${param}`)
     .then((res)=> res.json())
     .then((data)=> displayDevProfile(data))
 
