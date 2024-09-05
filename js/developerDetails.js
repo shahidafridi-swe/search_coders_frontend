@@ -56,7 +56,7 @@ const displayDevProfile = async (user) => {
             <h3>PROJECTS</h3>
             <div id="projects-list " class="row row-cols-1 row-cols-md-2 g-4">
                 ${projects.map(project => `
-                    <a class="text-decoration-none" href="http://127.0.0.1:8000/projects/${project.id}/">
+                    <a class="text-decoration-none" href="https://search-coders.onrender.com/${project.id}/">
                         <div class="card project-card h-100">
                             <img src="${project.featured_image || 'default-image.jpg'}" class="card-img-top" alt="${project.title}" />
                             <div class="card-body">
