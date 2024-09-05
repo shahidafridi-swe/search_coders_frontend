@@ -1,7 +1,7 @@
 const handleLogout = () => {
     const token = localStorage.getItem('token')
 
-    fetch("http://127.0.0.1:8000/users/logout/", {
+    fetch("https://search-coders.onrender.com/users/logout/", {
         method : "POST",
         headers: {
             "Content-Type": "application/json",

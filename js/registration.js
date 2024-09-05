@@ -13,7 +13,7 @@ const handleRegister = async  (event) => {
     const imageFile = formData.get('image');
     let imageUrl = '';
     console.log('imgFile>>', imageFile);
-    if (imageFile) {
+    if (imageFile.name) {
         const imgFormData = new FormData();
         imgFormData.append('image', imageFile);
         console.log('imgFormData->>', imgFormData);
@@ -49,7 +49,7 @@ const handleRegister = async  (event) => {
         password: formData.get("password"),
     };
     console.log(registerData)
-    fetch("http://127.0.0.1:8000/users/register/", {
+    fetch("https://search-coders.onrender.com/users/register/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

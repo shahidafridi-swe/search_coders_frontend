@@ -1,7 +1,7 @@
 const getParams = () => {
     const param = new URLSearchParams(window.location.search).get("projectId");
     console.log(param)
-    fetch(`http://127.0.0.1:8000/projects/${param}`)
+    fetch(`https://search-coders.onrender.com/projects/${param}`)
     .then((res)=> res.json())
     .then((data)=> displayProjectDetails(data))
 
@@ -10,12 +10,27 @@ getParams();
 
 const displayProjectDetails = (project) => {
     const parent = document.getElementById("project-details");
-
+    const user_id = localStorage.getItem("user_id")
+    let updateDeleteButton = ''
+    if(user_id == project.owner_id){
+        updateDeleteButton = `
+        
+            <a class="btn btn-outline-dark fw-bold m-2 p-2 w-50" href="update_project.html?projectId=${project.id}">Update</a>
+            <button onclick="handleDeleteProject(event)" class="btn btn-outline-dark fw-bold m-2 p-2 w-50">
+                DELETE
+            </button>
+        `
+     }
     parent.innerHTML = `
 
     <div class="row">
          <div class="col-md-6 border b2 p-2 rounded">
+         <a class="btn btn-outline-light b1 t2 fw-bold rounded-circle" href="projects.html"><</a>
+         <hr>
             <img class="w-100 rounded" src=${project.featured_image} alt="" srcset="">
+            <hr>
+           ${updateDeleteButton}
+            
          </div>
          <div class="col-md-6 border rounded b1 t2 p-3 p-md-5 ">
             <h3>${project.title}</h3>
@@ -41,7 +56,7 @@ const displayProjectDetails = (project) => {
 const loadReviews = () => {
     const param = new URLSearchParams(window.location.search).get("projectId");
 
-    fetch('http://127.0.0.1:8000/projects/review/')
+    fetch('https://search-coders.onrender.com/projects/review/')
     .then(res => res.json())
     .then(data => {
         const reviewsContainer = document.getElementById("reviews");
@@ -99,7 +114,7 @@ const handleAddReview = async (e) => {
         project: parseInt(param)
     }
     console.log(reviewData)
-    fetch("http://127.0.0.1:8000/projects/review/", {
+    fetch("https://search-coders.onrender.com/projects/review/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -126,3 +141,34 @@ const handleAddReview = async (e) => {
         alert("An error occurred while adding the project: " + error.message);
     });
 }
+
+
+const handleDeleteProject = async (e) => {
+    e.preventDefault();
+    const param = new URLSearchParams(window.location.search).get("projectId");
+    const token = localStorage.getItem("token");
+
+    const confirmDelete = confirm("Are you sure you want to delete this project?");
+    if (!confirmDelete) {
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://search-coders.onrender.com/projects/${param}/`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Token ${token}`
+            }
+        });
+
+        if (response.status === 204) {
+            alert("Project deleted successfully!");
+            window.location.href = "projects.html"; // Redirect to the projects list page after deletion
+        } else {
+            alert("Failed to delete the project.");
+        }
+    } catch (error) {
+        console.error('Error deleting project:', error);
+        alert("An error occurred while deleting the project.");
+    }
+};

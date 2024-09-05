@@ -10,7 +10,7 @@ const handleAddProject = async (e) => {
     const imageFile = formData.get('image');
     let imageUrl = '';
     console.log(formData)
-    if (imageFile) {
+    if (imageFile.name) {
         const imgFormData = new FormData();
         imgFormData.append('image', imageFile);
         console.log('imgFormData->>', imgFormData);
@@ -36,7 +36,7 @@ const handleAddProject = async (e) => {
         owner : parseInt(user_id)
     }
     console.log(projectData);
-    fetch("http://127.0.0.1:8000/projects/", {
+    fetch("https://search-coders.onrender.com/projects/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

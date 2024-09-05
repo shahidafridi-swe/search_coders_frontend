@@ -1,7 +1,7 @@
 const getParams = () => {
     const param = new URLSearchParams(window.location.search).get("user_id");
     console.log(param)
-    fetch(`http://127.0.0.1:8000/users/${param}`)
+    fetch(`https://search-coders.onrender.com/${param}`)
     .then((res)=> res.json())
     .then((data)=> displayDevProfile(data))
 
@@ -30,23 +30,23 @@ const displayDevProfile = async (user) => {
             <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_github}">
                 <i class="fa-brands fa-github fa-2x m-1"></i>
             </a>
-            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_github}">
+            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_twitter}">
                 <i class="fa-brands fa-twitter fa-2x m-1"></i>
             </a>
-            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_github}">
+            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_linkedin}">
                 <i class="fa-brands fa-linkedin fa-2x m-1"></i>
             </a>
-            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_github}">
-               <i class="fa-brands fa-youtube fa-2x m-1"></i>
+            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_youtube}">
+            <i class="fa-brands fa-youtube fa-2x m-1"></i>
             </a>
-            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_github}">
+            <a class="text-decoration-none social-icon" target="_blank" href="${user.profile.social_website}">
                 <i class="fa-solid fa-globe fa-2x m-1"></i>
             </a>
             <hr>
             ${messageButton}
             
         </div>
-        <div class="col-md-9 b2 px-3 border rounded">
+        <div class="col-md-9 b2 p-3 p-md-5 b2 border rounded">
             <h3>ABOUT</h3>
             <hr>
             <p>${user.profile.bio}</p>

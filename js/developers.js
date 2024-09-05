@@ -13,7 +13,7 @@ const loadDevelopers = () => {
 
 const performDevSearch = () => {
     const query = document.querySelector('input[name="dev_search_query"]').value;
-    const url = `http://127.0.0.1:8000/users/?search=${encodeURIComponent(query)}`;
+    const url = `https://search-coders.onrender.com/?search=${encodeURIComponent(query)}`;
     
     fetch(url)
     .then(res => res.json())

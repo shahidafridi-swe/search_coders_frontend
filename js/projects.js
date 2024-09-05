@@ -11,7 +11,7 @@ document
 
 const performSearch = () => {
   const query = document.querySelector('input[name="search_query"]').value;
-  const url = `http://127.0.0.1:8000/projects/?search=${encodeURIComponent(
+  const url = `https://search-coders.onrender.com/projects/?search=${encodeURIComponent(
     query
   )}`;
 
